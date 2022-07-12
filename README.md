@@ -1,1 +1,1 @@
-# gfg-solutions
+# code-solutions
