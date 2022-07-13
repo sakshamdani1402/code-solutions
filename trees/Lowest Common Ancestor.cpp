@@ -11,9 +11,9 @@
 
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
     if(root->val < p->val && root->val < q->val)  //if root->val smaller than both then search for greater val
-        lowestCommonAncestor(root->right, p, q);
+        return lowestCommonAncestor(root->right, p, q);
     if(p->val < root->val && q->val < root->val)  //if root->val > p and q search for smaller val
-        lowestCommonAncestor(root->left, p, q);   //it is in the middle, then it is lowest common ancestor
+        return lowestCommonAncestor(root->left, p, q);   //it is in the middle, then it is lowest common ancestor
 
     return root;
 }
