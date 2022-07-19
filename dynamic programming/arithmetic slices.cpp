@@ -45,3 +45,17 @@ int numberOfArithmeticSlices(vector<int>& nums) {
 /* we can implement this in o(1) space just by maintaing a dp variable and increment it
 while we are finding a new AP and reinit it to 0 as soon as we dont find an AP
 to start freshly form upcoming index */
+
+//CONST SPACE SOLN
+int numberOfArithmeticSlices(vector<int>& nums) {
+    int prevSlice=0, count=0;
+    for(int i=2; i<nums.size(); i++){
+        if(nums[i-1]-nums[i-2] == nums[i]-nums[i-1])
+            prevSlice++;
+        else prevSlice=0;
+
+        count+=prevSlice;
+    }
+
+    return count;
+}
